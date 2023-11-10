@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jdk-alpine
+FROM maven:3.9.5-eclipse-temurin-21-alpine as build
 
 LABEL authors="Amanda Martins Xavier <hi@amandamartins.dev>"
 LABEL version="1.0.0"
@@ -6,8 +6,16 @@ LABEL description="Imagem Docker do backend da aplicação web Escola."
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+COPY src src
+
+COPY pom.xml pom.xml
+
+RUN mvn clean package
+
+FROM eclipse-temurin:21-jre-alpine
+
+COPY --from=build /app/target/*.jar /usr/share/app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","/app/app.jar"]
+ENTRYPOINT ["java","-jar","/usr/share/app.jar"]
