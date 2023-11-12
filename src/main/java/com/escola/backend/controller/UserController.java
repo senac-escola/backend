@@ -74,7 +74,7 @@ public class UserController {
     public ResponseEntity<?> deleteByEmail(@PathVariable String user_email) {
         try {
             if (UserService.deleteByEmail(user_email) > 0) {
-                return ResponseEntity.status(HttpStatus.OK).body("Usuário deletado com sucesso");
+                return ResponseEntity.status(HttpStatus.OK).body("Usuário excluído com sucesso");
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado");
             }

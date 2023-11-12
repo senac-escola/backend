@@ -1,6 +1,6 @@
 # Backend ⚙️
 
-> O backend é contruído em [Java](https://www.oracle.com/java/technologies/downloads/) com [Spring](https://spring.io/), e implantado na [DigitalOcean](https://www.digitalocean.com/).
+> O backend é contruído em [Java](https://www.oracle.com/java/technologies/downloads/) com [Spring](https://spring.io/), e implantado com uso do [Docker](https://www.docker.com/) na App Platform da [DigitalOcean](https://www.digitalocean.com/).
 
 ## 🔎 Como utilizar
 
