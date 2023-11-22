@@ -29,9 +29,4 @@ public class AuthController {
         return ResponseEntity.ok(tokenService.gerarToken(principal));
     }
 
-    @GetMapping("/teste")
-    public String teste() {
-        return "Teste";
-    }
-
 }
